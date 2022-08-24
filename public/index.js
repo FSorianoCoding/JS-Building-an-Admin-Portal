@@ -1,9 +1,9 @@
 async function main() {
 
-    let response = await fetch('http://localhost:3001/listBooks')
-    let books = await response.json()
+    let response = await fetch('http://localhost:3001/listBooks')    // GET method is being used, per the API website.
+    let books = await response.json()   // Technically an oject, but is actually an array of books being fetched.
 
-    books.forEach(renderBook)
+    books.forEach(renderBook)   // .forEach does it for each book in the array.
 }
 
 function renderBook(book) {
@@ -26,3 +26,14 @@ function renderBook(book) {
 }
 
 main()
+
+
+// Code to run For the npm start developer tools, per activity
+// fetch('http://localhost:9001/updateBook',{
+//     method: 'PATCH',
+//     headers: { 'Content-Type': 'application/json'},
+//     body: JSON.stringify({
+//         'id': 3,
+//         'title': 'Legends of Arathrae'
+//     })
+// })
